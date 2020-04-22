@@ -40,7 +40,7 @@ class Board:
                 while (self.status_move < 3) and flag:
                     self.status_move += 1
                     flag = self.move(hero)
-                    if flag == (('break') or (None)):
+                    if flag == 'break':
                         flag = 'break'
                         break
                 self.status_move = 0
