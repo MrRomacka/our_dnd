@@ -10,7 +10,7 @@ class Board:
 
     def add(self, hero, x, y):
         self.hero_list.append(hero)
-        if x >= (self.x_size - 1) or x < 0 or y > (self.y_size - 1) or y < 0:
+        if x > (self.x_size - 1) or x < 0 or y > (self.y_size - 1) or y < 0:
             print('Hey, that is illegal!')
             return False
         elif self.field[x][y] != 0:
