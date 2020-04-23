@@ -58,28 +58,40 @@ class Board:
                 else:
                     hero.x = hero.x - 1
                     flag = self.check_heroes()
-                    return flag
+                    if flag == 'ally':
+                        print('Oops, here`s hero`s ally.\nChange direction.')
+                    else:
+                        return flag
             elif direction == 'down':
                 if hero.x == self.x_size:
                     print('There`s a wall, change my direction.')
                 else:
                     hero.x = hero.x + 1
                     flag = self.check_heroes()
-                    return flag
+                    if flag == 'ally':
+                        print('Oops, here`s hero`s ally.\nChange direction.')
+                    else:
+                        return flag
             elif direction == 'left':
                 if hero.y < 1:
                     print('There`s a wall, change my direction.')
                 else:
                     hero.y = hero.y - 1
                     flag = self.check_heroes()
-                    return flag
+                    if flag == 'ally':
+                        print('Oops, here`s hero`s ally.\nChange direction.')
+                    else:
+                        return flag
             elif direction == 'right':
                 if hero.y == self.y_size:
                     print('There`s a wall, change my direction.')
                 else:
                     hero.y = hero.y + 1
                     flag = self.check_heroes()
-                    return flag
+                    if flag == 'ally':
+                        print('Oops, here`s hero`s ally.\nChange direction.')
+                    else:
+                        return flag
             elif direction == "status":
                 self.heroes_status()
             elif direction == 'stop':
@@ -94,6 +106,8 @@ class Board:
         for i in range(len(self.hero_list) - 1):
             for j in range(i + 1, len(self.hero_list)):
                 if (self.hero_list[i].x == self.hero_list[j].x) and (self.hero_list[i].y == self.hero_list[j].y):
+                    if self.hero_list[i].team == self.hero_list[j].team:
+                        return 'ally'
                     condition = self.fight(self.hero_list[i], self.hero_list[j])
                     if condition is None:
                         return 'break'
