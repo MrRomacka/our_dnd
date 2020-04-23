@@ -1,3 +1,5 @@
+from time import sleep
+
 class Board:
     def __init__(self, x=8, y=8):
         self.field = [[0] * y for _ in range(x)]
@@ -118,6 +120,7 @@ class Board:
         hr_1 = hero
         hr_2 = enemy
         while True:
+            sleep(0.2)
             if hr_1.stun_status > 0:
                 hr_1.stun_status -= 1
             else:
