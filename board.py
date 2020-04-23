@@ -118,7 +118,7 @@ class Board:
         hr_1 = hero
         hr_2 = enemy
         while True:
-            if hr_1.stun_status:
+            if hr_1.stun_status > 0:
                 hr_1.stun_status -= 1
             else:
                 hr_1.strike(hr_2)
