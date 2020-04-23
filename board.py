@@ -1,5 +1,6 @@
 from time import sleep
 
+
 class Board:
     def __init__(self, x=8, y=8):
         self.field = [[0] * y for _ in range(x)]
